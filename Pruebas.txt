@@ -17,3 +17,5 @@ B: {'c', '$'}
 C: {'$'}
 D: set()
 PS C:\Users\santi\OneDrive\Escritorio\Parser>
+
+recordar que hay q cambiar esta gramtica general 
