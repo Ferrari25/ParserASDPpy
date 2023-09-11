@@ -17,7 +17,7 @@ buscar_alcanzables(simbolo_distinguido)
 
 ## EXPLICACION 
 
-#
+#buscar que hay q explicar
 #
 #
 #
