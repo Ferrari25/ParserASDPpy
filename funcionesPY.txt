@@ -1,0 +1,34 @@
+
+get(): se utiliza para acceder a un valor asociado con una clave en un diccionario. 
+        Si la clave existe en el diccionario, get() devuelve el valor correspondiente; de lo contrario, 
+        devuelve un valor predeterminado que se especifica como argumento.
+
+keys(): keys() es un método de los diccionarios en Python que se utiliza para obtener una vista de todas las claves (keys) en el diccionario.
+
+set(): es un conjunto,Un conjunto es una colección desordenada de elementos únicos. 
+        Se utiliza para almacenar elementos que no tienen un orden particular y no pueden tener duplicados.
+
+add(): se utiliza para añadir un elemento a un conjunto.Si el elemento ya existe en el conjunto, no se agregarán duplicados.
+
+all(): se utiliza para verificar si todos los elementos de una secuencia (como una lista o una tupla) son True. 
+        Devuelve True si todos los elementos son True o si la secuencia está vacía.
+
+items(): se utiliza para obtener una vista de todos los pares clave-valor en el diccionario.
+
+f"{simbolo}: {conjunto}": crea una cadena formateada en la que {simbolo} y {conjunto} son marcadores de posición que 
+                            se reemplazarán con los valores de las variables simbolo y conjunto cuando la cadena se cree.
+
+"\nConjuntos Siguientes:": Esto es una cadena de texto que contiene el carácter de nueva línea (\n) seguido de la cadena "Conjuntos Siguientes:". 
+                            Se utiliza para imprimir una línea en blanco antes de mostrar los conjuntos siguientes.
+
+Operador ( |= ): El operador |= se utiliza en Python para realizar una operación OR a nivel de bits y actualizar el valor de la variable 
+                    a la izquierda con el resultado de la operación. Cuando se utiliza con conjuntos,
+                    |= realiza una unión de conjuntos, es decir, agrega elementos de un conjunto a otro conjunto sin duplicados.
+
+'ε': cadena vacía
+
+'$': final de una entrada, es decir, el final de la cadena que se está analizando (EOF).
+
+len(): se utiliza para obtener la longitud (número de elementos) de una secuencia, como una lista, una cadena o una tupla.
+
+enumerate() : se utiliza para iterar a través de los símbolos de una producción y llevar un registro del índice de cada símbolo en la producción
