@@ -1,4 +1,4 @@
-from Gramtica import *
+from Gramatica import *
 
 
 # Conjunto de símbolos anulables

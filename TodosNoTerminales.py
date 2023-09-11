@@ -1,4 +1,4 @@
-from Gramtica import *
+from Gramatica import *
 
 # Conjunto de todos los símbolos no terminales
 todos_no_terminales = set(grammar.keys())

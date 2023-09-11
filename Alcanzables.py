@@ -1,4 +1,4 @@
-from Gramtica import *
+from Gramatica import *
 from SimboloInicial import *
 
 alcanzables = set()
