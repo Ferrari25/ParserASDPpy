@@ -4,7 +4,7 @@ from Lexer import *
 VN = ['Program', 'ListaSentencias', 'Sentencia', 'SentenciaSi',
                     'SentenciaRepetir', 'SentenciaAsig', 'SentenciaLeer', 'SentenciaMostrar',
                     'SentenciaFun','Proc', 'ListaPar', 'Expression', 'Expresion2', 'Factor',
-                    'Termino'
+                    'Termino','ListaSentencias2','ListaPar2','Expresion2','Termino2'
                 ]
 
 
