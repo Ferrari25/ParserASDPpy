@@ -65,7 +65,7 @@ P = {
     'SentenciaSi' : [
                      ['SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2']
                     ]
-    'SentenciaSi2' : [['SINO','ListaSentencia','FIN-SI'],['FIN-SI]]
+    'SentenciaSi2' : [['SINO','ListaSentencia','FIN-SI'],['FIN-SI']]
     
     'SentenciaRepetir': [  ['REPETIR','ListaSentencias','HASTA','Expression']  ],
     
