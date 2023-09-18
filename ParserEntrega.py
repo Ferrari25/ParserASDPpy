@@ -17,14 +17,27 @@ VT = ["SI","FINSI","OPSUM","OPMULT","EQUAL","LEER","MOSTRAR","REPETIR",
 SD(Program->ListaSentencias) = {si,repetir,id,leer,mostrar,func}
 SD(ListaSentencia -> Sentencia) = {si,repetir,id,leer,mostrar,func}
 SD(ListaSentencia2 -> 'PUNTO-COMA','Sentencias','ListaSentencias2' ) = {PUNTO-COMA}
+SD(ListaSentencia2 -> λ )  = {.....................}
 SD(Sentencia -> SentenciaSi) = {SI}
-SD(SentenciaSi2 -> 
-SD(Setencia -> SentenciaRepertir) = {REPETIR}
+SD(Sentencia -> SentenciaRepertir) = {REPETIR}
 SD(Sentencia -> SentenciaAsig) = {ID}
 SD(Sentencia -> SentenciaLeer) = {LEER}
 SD(Sentencia -> SentenciaMostrar) = {MOSTRAR}
+SD(SentenciaRepetir -> 'REPETIR','ListaSentencias','HASTA','Expression') = {REPETIR}
 SD(Sentencia -> SentenciaFun) = {FUNC}
-
+SD(SentenciaSi ->'SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2') = {SI}
+SD(SentenciaSi2 -> 'SINO','ListaSentencia','FIN-SI') ={ SINO}
+SD(SentenciaSi2 -> FINSI) = {FIN-SI}
+SD(SentenciaRepetir -> ) = {REPETIR}
+SD(SentenciaAsig -> ) = {ID}
+SD(SentenciaLeer -> ) = {LEER}
+SD(SentenciaMostrar ->) = {MOSTRAR}
+SD(SentenciaFun -> ) = {FUNC}
+SD(Proc -> ) = {ID}
+SD(ListaPar ->  ) = {ID}
+SD(ListaPar2 -> 'PUNTO-COMA', 'ID', 'ListaPar2') = {PUNTO-COMA}
+SD(ListaPar2 -> λ)  = {.........}
+SD()  = {ID}
 
 ###OBERSERVACIONES##
 COMO LA INTERSECCION DE TODAS LAS PRODUCCIONES CON SU MISMO NO-TERMINAL ES VACIA, LA GRAMATICA ES LL(1)
@@ -73,9 +86,8 @@ P = {
   
                 
     
-    'Expression': [ ['Expresion2', 'OPEREL','Expresion2'],
-                    ['Expresion2'] 
-                  ],
+    'Expression': [ ['Expresion2', 'ExpressionPrima']]
+    'ExpressionPrima' : [[λ],[]]
     
     'Expresion2': [['Termino','Expresion22']] 
 
