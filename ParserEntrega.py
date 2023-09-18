@@ -12,10 +12,27 @@ VT = ["SI","FINSI","OPSUM","OPMULT","EQUAL","LEER","MOSTRAR","REPETIR",
               "HASTA","ENTONCES","MIENTRAS","FUNC","FINFUNC","OPEREL","PUNTO-COMA",
               "Parentensis Cerrado","Parentensis Abierto","NUM","ID"]
 
+###SIMBOLOS DIRECTRICES###
+ ### RECORDAR QUE SE COPIAN LOS TOKEN ###
+SD(Program->ListaSentencias) = {si,repetir,id,leer,mostrar,func}
+SD(ListaSentencia -> Sentencia) = {si,repetir,id,leer,mostrar,func}
+SD(ListaSentencia2 -> 'PUNTO-COMA','Sentencias','ListaSentencias2' ) = {PUNTO-COMA}
+SD(Sentencia -> SentenciaSi) = {SI}
+SD(SentenciaSi2 -> 
+SD(Setencia -> SentenciaRepertir) = {REPETIR}
+SD(Sentencia -> SentenciaAsig) = {ID}
+SD(Sentencia -> SentenciaLeer) = {LEER}
+SD(Sentencia -> SentenciaMostrar) = {MOSTRAR}
+SD(Sentencia -> SentenciaFun) = {FUNC}
+
+
+###OBERSERVACIONES##
+COMO LA INTERSECCION DE TODAS LAS PRODUCCIONES CON SU MISMO NO-TERMINAL ES VACIA, LA GRAMATICA ES LL(1)
 
 
 P = {
     'Program': [['ListaSentencias']],
+
     
     'ListaSentencias' : [
                          ['Sentencia','ListaSentencias2']
@@ -33,9 +50,9 @@ P = {
                    ],
     
     'SentenciaSi' : [
-                     ['SI','Expression','ENTONCES','ListaSentencias','SINO','ListaSentencias','FINSI'],
-                     ['SI','Expression','ENTONCES','ListaSentencias','FINSI']
-                    ],
+                     ['SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2']
+                    ]
+    'SentenciaSi2' : [['SINO','ListaSentencia','FIN-SI'],['FIN-SI]]
     
     'SentenciaRepetir': [  ['REPETIR','ListaSentencias','HASTA','Expression']  ],
     
