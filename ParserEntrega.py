@@ -18,9 +18,10 @@ P = {
     'Program': [['ListaSentencias']],
     
     'ListaSentencias' : [
-                          ['ListaSentencias','PUNTO-COMA','Sentencia'],
-                          ['Sentencia']
-                        ],
+                         ['Sentencia','ListaSentencias2']
+                        ] 
+    'ListaSentencias2' : [['PUNTO-COMA','Sentencias','ListaSentencias2'], []]
+
     
     'Sentencia' : [ 
                     ['SentenciaSi'],
@@ -48,21 +49,24 @@ P = {
     
     'Proc': [  ['ID', 'Parentensis Abierto' , 'ListaPar' , 'Parentensis Cerrado','ListaSentencias']  ],
     
-    'ListaPar': [ ['ListaPar','PUNTO-COMA','ID'], 
-                   ['ID']
-                ],
+    'ListaPar': [['ID','ListaPar2'] ]
+
+
+    'ListaPar2': [['PUNTO-COMA', 'ID', 'ListaPar2'],[]]
+  
+                
     
     'Expression': [ ['Expresion2', 'OPEREL','Expresion2'],
                     ['Expresion2'] 
                   ],
     
-    'Expresion2': [ ['Expresion2', 'OPEREL', 'Expresion2'], 
-                    [ 'Termino' ]
-                  ],
+    'Expresion2': [['Termino','Expresion22']] 
+
+    'Expresion22': [['OPSUM', 'Termino', 'Expresion22'],[]]
     
-    'Termino': [ ['Termino','OPTMULT','Factor'],
-                 ['Factor']
-               ],
+    'Termino': [['Factor' , 'Termino2']] 
+
+    'Termino2':[['OPMULT','Termino','Termino2'],[]]
     
     'Factor': [ ['Parentesis Abierto', 'Expression', 'Parentesis Cerrado'],
                 ['NUM'],
