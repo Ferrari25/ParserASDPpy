@@ -40,7 +40,7 @@ SD(ListaPar2 -> λ)  = {.........}
 SD()  = {ID}
 
 ###OBERSERVACIONES##
-COMO LA INTERSECCION DE TODAS LAS PRODUCCIONES CON SU MISMO NO-TERMINAL ES VACIA, LA GRAMATICA ES LL(1)
+###COMO LA INTERSECCION DE TODAS LAS PRODUCCIONES CON SU MISMO NO-TERMINAL ES VACIA, LA GRAMATICA ES LL(1)###
 
 
 P = {
@@ -48,7 +48,7 @@ P = {
 
     
     'ListaSentencias' : [['Sentencia','ListaSentencias2']] ,
-    'ListaSentencias2' : [['PUNTO-COMA','Sentencias','ListaSentencias2'], []]
+    'ListaSentencias2' : [['PUNTO-COMA','Sentencias','ListaSentencias2'], []],
 
     
     'Sentencia' : [ 
