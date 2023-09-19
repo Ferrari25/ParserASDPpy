@@ -1,4 +1,4 @@
-from Gramtica import *
+from Gramatica import * 
 from Primeros import *
 
 # Conjuntos siguientes
@@ -12,9 +12,9 @@ def calcular_siguientes(no_terminal):
     siguientes[no_terminal] = set()
 
     if no_terminal == 'simbolo_distinguido':
-        siguientes[no_terminal].add('$') 
+        siguientes[no_terminal].add('#') 
 
-    for no_terminal, producciones in grammar.items():
+    for no_terminal, producciones in P.items():
         for produccion in producciones:
             for i, simb in enumerate(produccion):
                 if simb == no_terminal:
