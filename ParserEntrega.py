@@ -16,20 +16,25 @@ VT = ["SI","FINSI","OPSUM","OPMULT","EQUAL","LEER","MOSTRAR","REPETIR",
  ### RECORDAR QUE SE COPIAN LOS TOKEN ###
 
 SD(Program->ListaSentencias) = {si,repetir,id,leer,mostrar,func}
-SD(ListaSentencia -> Sentencia) = {si,repetir,id,leer,mostrar,func}
+
+SD(ListaSentencia -> Sentencia  ListaSentencia2) = {si,repetir,id,leer,mostrar,func}
+
 SD(ListaSentencia2 -> 'PUNTO-COMA','Sentencias','ListaSentencias2' ) = {PUNTO-COMA}
-SD(ListaSentencia2 -> λ )  = {#}
+SD(ListaSentencia2 -> λ )  = {#}   <-----------------------------------------------------------------------
+  
 SD(Sentencia -> SentenciaSi) = {SI}
 SD(Sentencia -> SentenciaRepertir) = {REPETIR}
 SD(Sentencia -> SentenciaAsig) = {ID}
 SD(Sentencia -> SentenciaLeer) = {LEER}
 SD(Sentencia -> SentenciaMostrar) = {MOSTRAR}
-SD(SentenciaRepetir -> 'REPETIR','ListaSentencias','HASTA','Expression') = {REPETIR}
 SD(Sentencia -> SentenciaFun) = {FUNC}
+
+SD(SentenciaRepetir -> 'REPETIR','ListaSentencias','HASTA','Expression') = {REPETIR}
+
 SD(SentenciaSi ->'SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2') = {SI}
 SD(SentenciaSi2 -> 'SINO','ListaSentencia','FIN-SI') ={ SINO}
 SD(SentenciaSi2 -> FINSI) = {FIN-SI}
-SD(SentenciaRepetir -> ) = {REPETIR}
+
 SD(SentenciaAsig -> ) = {ID}
 SD(SentenciaLeer -> ) = {LEER}
 SD(SentenciaMostrar ->) = {MOSTRAR}
@@ -37,16 +42,16 @@ SD(SentenciaFun -> ) = {FUNC}
 SD(Proc -> ) = {ID}
 SD(ListaPar ->  ) = {ID}
 SD(ListaPar2 -> 'PUNTO-COMA', 'ID', 'ListaPar2') = {PUNTO-COMA}
-SD(ListaPar2 -> λ)  = { ( }
+SD(ListaPar2 -> λ)  = { ( }   <----------------------------------------------------------------------
 SD(Expression -> 'Expresion2', 'ExpressionPrima') = {(,NUM,ID}
 SD(ExpresionPrima -> 'OPEREL','Expression2') {OPEREL}
-SD(ExpresionPrima -> Lamda) ={ ( }
+SD(ExpresionPrima -> Lamda) ={ ( }    <---------------------------------------------------------------
 SD(Exrepssion2 -> 'Termino','Expresion22') = {(, NUM,ID}
 SD(Expression22 -> OPTSUMA Termno Expersion22) ={OPTSuma}
-SD(Expression22 -> Lambda) ={}
+SD(Expression22 -> Lambda) ={ ) }       <-------------------------------------------------------
 SD(Termino -> Factor Termino2) = {( , NUM , ID}
-SD(Termino -> OPTMULT Factor TErmino2) = {OPTMULT}
-SD(Termino2 -> lambda) = {...............................................}
+SD(Termino2 -> OPTMULT Factor TErmino2) = {OPTMULT}
+SD(Termino2 -> lambda) = {}   <----------------------------------------------------
 SD(Factor -> '(' 'Expresion' ')' )= { ( }
 SD(Factor -> NUM)= {NUM}
 SD(Factor -> ID) = {ID}
