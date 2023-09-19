@@ -61,7 +61,7 @@ P = {
     
     'Termino': [['Factor' , 'Termino2']] ,
 
-    'Termino2':[['OPMULT','Termino','Termino2'],[]],
+    'Termino2':[['OPMULT','Factor','Termino2'],[]],
     
     'Factor': [ ['Parentesis Abierto', 'Expression', 'Parentesis Cerrado'],
                 ['NUM'],

@@ -27,9 +27,8 @@ P = {
                     ['SetenciaFun']
                    ],
     
-    'SentenciaSi' : [
-                     ['SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2']
-                    ],
+    'SentenciaSi' : [['SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2']],
+
     'SentenciaSi2' : [['SINO','ListaSentencia','FIN-SI'],['FIN-SI']],
     
     'SentenciaRepetir': [  ['REPETIR','ListaSentencias','HASTA','Expression']  ],
@@ -50,7 +49,8 @@ P = {
     'ListaPar2': [['PUNTO-COMA', 'ID', 'ListaPar2'],[]],
     
     'Expression': [ ['Expresion2', 'ExpressionPrima']],
-    'ExpressionPrima' : [[],['OPEREL','Expression2']],
+
+    'ExpressionPrima' : [['OPEREL','Expression2'],[]],
     
     'Expresion2': [['Termino','Expresion22']] ,
 
