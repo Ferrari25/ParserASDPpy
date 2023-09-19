@@ -47,9 +47,7 @@ P = {
     'Program': [['ListaSentencias']],
 
     
-    'ListaSentencias' : [
-                         ['Sentencia','ListaSentencias2']
-                        ] 
+    'ListaSentencias' : [['Sentencia','ListaSentencias2']] ,
     'ListaSentencias2' : [['PUNTO-COMA','Sentencias','ListaSentencias2'], []]
 
     
@@ -64,8 +62,8 @@ P = {
     
     'SentenciaSi' : [
                      ['SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2']
-                    ]
-    'SentenciaSi2' : [['SINO','ListaSentencia','FIN-SI'],['FIN-SI']]
+                    ],
+    'SentenciaSi2' : [['SINO','ListaSentencia','FIN-SI'],['FIN-SI']],
     
     'SentenciaRepetir': [  ['REPETIR','ListaSentencias','HASTA','Expression']  ],
     
@@ -79,23 +77,23 @@ P = {
     
     'Proc': [  ['ID', 'Parentensis Abierto' , 'ListaPar' , 'Parentensis Cerrado','ListaSentencias']  ],
     
-    'ListaPar': [['ID','ListaPar2'] ]
+    'ListaPar': [['ID','ListaPar2'] ],
 
 
-    'ListaPar2': [['PUNTO-COMA', 'ID', 'ListaPar2'],[]]
+    'ListaPar2': [['PUNTO-COMA', 'ID', 'ListaPar2'],[]],
   
                 
     
-    'Expression': [ ['Expresion2', 'ExpressionPrima']]
-    'ExpressionPrima' : [[λ],[]]
+    'Expression': [ ['Expresion2', 'ExpressionPrima']],
+    'ExpressionPrima' : [[λ],[]],
     
-    'Expresion2': [['Termino','Expresion22']] 
+    'Expresion2': [['Termino','Expresion22']] ,
 
-    'Expresion22': [['OPSUM', 'Termino', 'Expresion22'],[]]
+    'Expresion22': [['OPSUM', 'Termino', 'Expresion22'],[]],
     
-    'Termino': [['Factor' , 'Termino2']] 
+    'Termino': [['Factor' , 'Termino2']] ,
 
-    'Termino2':[['OPMULT','Termino','Termino2'],[]]
+    'Termino2':[['OPMULT','Termino','Termino2'],[]],
     
     'Factor': [ ['Parentesis Abierto', 'Expression', 'Parentesis Cerrado'],
                 ['NUM'],
