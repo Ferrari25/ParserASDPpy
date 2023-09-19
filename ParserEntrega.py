@@ -14,6 +14,7 @@ VT = ["SI","FINSI","OPSUM","OPMULT","EQUAL","LEER","MOSTRAR","REPETIR",
 
 ###SIMBOLOS DIRECTRICES###
  ### RECORDAR QUE SE COPIAN LOS TOKEN ###
+
 SD(Program->ListaSentencias) = {si,repetir,id,leer,mostrar,func}
 SD(ListaSentencia -> Sentencia) = {si,repetir,id,leer,mostrar,func}
 SD(ListaSentencia2 -> 'PUNTO-COMA','Sentencias','ListaSentencias2' ) = {PUNTO-COMA}
@@ -36,10 +37,10 @@ SD(SentenciaFun -> ) = {FUNC}
 SD(Proc -> ) = {ID}
 SD(ListaPar ->  ) = {ID}
 SD(ListaPar2 -> 'PUNTO-COMA', 'ID', 'ListaPar2') = {PUNTO-COMA}
-SD(ListaPar2 -> λ)  = {.........}
+SD(ListaPar2 -> λ)  = { ( }
 SD(Expression -> 'Expresion2', 'ExpressionPrima') = {(,NUM,ID}
 SD(ExpresionPrima -> 'OPEREL','Expression2') {OPEREL}
-SD(ExpresionPrima -> Lamda) ={}
+SD(ExpresionPrima -> Lamda) ={ ( }
 SD(Exrepssion2 -> 'Termino','Expresion22') = {(, NUM,ID}
 SD(Expression22 -> OPTSUMA Termno Expersion22) ={OPTSuma}
 SD(Expression22 -> Lambda) ={}
@@ -82,7 +83,7 @@ P = {
     
     'SentenciaLeer' : [  ['LEER', 'ID']  ],
     
-    'SentenciaMostrar': [  ['MOSTRAR', 'EXpression']  ],
+    'SentenciaMostrar': [  ['MOSTRAR', 'Expression']  ],
     
     'SentenciaFun': [  ['FUNC', 'Proc', 'FINFUNC']  ],
     
@@ -92,8 +93,6 @@ P = {
 
 
     'ListaPar2': [['PUNTO-COMA', 'ID', 'ListaPar2'],[]],
-  
-                
     
     'Expression': [ ['Expresion2', 'ExpressionPrima']],
     'ExpressionPrima' : [[λ],['OPEREL','Expression2']],
