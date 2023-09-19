@@ -39,19 +39,25 @@ SD(SentenciaAsig -> ) = {ID}
 SD(SentenciaLeer -> ) = {LEER}
 SD(SentenciaMostrar ->) = {MOSTRAR}
 SD(SentenciaFun -> ) = {FUNC}
+
 SD(Proc -> ) = {ID}
+
 SD(ListaPar ->  ) = {ID}
 SD(ListaPar2 -> 'PUNTO-COMA', 'ID', 'ListaPar2') = {PUNTO-COMA}
 SD(ListaPar2 -> λ)  = { ( }   <----------------------------------------------------------------------
+
 SD(Expression -> 'Expresion2', 'ExpressionPrima') = {(,NUM,ID}
 SD(ExpresionPrima -> 'OPEREL','Expression2') {OPEREL}
 SD(ExpresionPrima -> Lamda) ={ ( }    <---------------------------------------------------------------
+
 SD(Exrepssion2 -> 'Termino','Expresion22') = {(, NUM,ID}
 SD(Expression22 -> OPTSUMA Termno Expersion22) ={OPTSuma}
 SD(Expression22 -> Lambda) ={ ) }       <-------------------------------------------------------
+
 SD(Termino -> Factor Termino2) = {( , NUM , ID}
 SD(Termino2 -> OPTMULT Factor TErmino2) = {OPTMULT}
 SD(Termino2 -> lambda) = {}   <----------------------------------------------------
+
 SD(Factor -> '(' 'Expresion' ')' )= { ( }
 SD(Factor -> NUM)= {NUM}
 SD(Factor -> ID) = {ID}
