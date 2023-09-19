@@ -50,7 +50,7 @@ P = {
     'ListaPar2': [['PUNTO-COMA', 'ID', 'ListaPar2'],[]],
     
     'Expression': [ ['Expresion2', 'ExpressionPrima']],
-    'ExpressionPrima' : [[λ],['OPEREL','Expression2']],
+    'ExpressionPrima' : [[],['OPEREL','Expression2']],
     
     'Expresion2': [['Termino','Expresion22']] ,
 
