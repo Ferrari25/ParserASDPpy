@@ -11,7 +11,12 @@ VT = ["SI","FINSI","OPSUM","OPMULT","EQUAL","LEER","MOSTRAR","REPETIR",
 
 
 P = {
-    'Program': [['ListaSentencias']],
+    'Program': [{
+          "produccion": ['ListaSentencias'],
+          "SD": ["a","b","c"],
+          }],
+
+     'Program' : [['ListaSentencias']],
 
     
     'ListaSentencias' : [['Sentencia','ListaSentencias2']] ,
