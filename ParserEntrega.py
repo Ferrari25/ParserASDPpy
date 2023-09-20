@@ -1,73 +1,7 @@
-from Automatas import *
-from Lexer import *
-
-VN = ['Program', 'ListaSentencias', 'Sentencia', 'SentenciaSi',
-                    'SentenciaRepetir', 'SentenciaAsig', 'SentenciaLeer', 'SentenciaMostrar',
-                    'SentenciaFun','Proc', 'ListaPar', 'Expression', 'Expresion2', 'Factor',
-                    'Termino','ListaSentencias2','ListaPar2','Expresion2','Termino2'
-                ]
-
-
-VT = ["SI","FINSI","OPSUM","OPMULT","EQUAL","LEER","MOSTRAR","REPETIR",
-              "HASTA","ENTONCES","MIENTRAS","FUNC","FINFUNC","OPEREL","PUNTO-COMA",
-              "Parentensis Cerrado","Parentensis Abierto","NUM","ID"]
-
-
-P = {
-    'Program': [['ListaSentencias']],
-
-    
-    'ListaSentencias' : [['Sentencia','ListaSentencias2']] ,
-    'ListaSentencias2' : [['PUNTO-COMA','Sentencias','ListaSentencias2'], []],
-
-    
-    'Sentencia' : [ 
-                    ['SentenciaSi'],
-                    ['SentenciaRepetir'],
-                    ['SentenciaAsig'],
-                    ['SentenciaLeer'],
-                    ['SentenciaMostrar'],
-                    ['SetenciaFun']
-                   ],
-    
-    'SentenciaSi' : [
-                     ['SI','Expression','ENTONCES','ListaSentencias','SentenciaSi2']
-                    ],
-    'SentenciaSi2' : [['SINO','ListaSentencia','FIN-SI'],['FIN-SI']],
-    
-    'SentenciaRepetir': [  ['REPETIR','ListaSentencias','HASTA','Expression']  ],
-    
-    'SentenciaAsig': [  ['ID','EQUAL', 'Expression']  ],
-    
-    'SentenciaLeer' : [  ['LEER', 'ID']  ],
-    
-    'SentenciaMostrar': [  ['MOSTRAR', 'Expression']  ],
-    
-    'SentenciaFun': [  ['FUNC', 'Proc', 'FINFUNC']  ],
-    
-    'Proc': [  ['ID', 'Parentensis Abierto' , 'ListaPar' , 'Parentensis Cerrado','ListaSentencias']  ],
-    
-    'ListaPar': [['ID','ListaPar2'] ],
-
-
-    'ListaPar2': [['PUNTO-COMA', 'ID', 'ListaPar2'],[]],
-    
-    'Expression': [ ['Expresion2', 'ExpressionPrima']],
-    'ExpressionPrima' : [[λ],['OPEREL','Expression2']],
-    
-    'Expresion2': [['Termino','Expresion22']] ,
-
-    'Expresion22': [['OPSUM', 'Termino', 'Expresion22'],[]],
-    
-    'Termino': [['Factor' , 'Termino2']] ,
-
-    'Termino2':[['OPMULT','Factor','Termino2'],[]],
-    
-    'Factor': [ ['Parentesis Abierto', 'Expression', 'Parentesis Cerrado'],
-                ['NUM'],
-                ['ID']
-              ]
-}
+from Automatas import *           #trae los automatas que utiliza el lexer
+from Lexer import *               #trae el lexer
+from Gramatica import *           #trae producciones, VT, VN
+from GPSD import *                #no usa nada aun pero igual lo traigo para probar cosas xd
 
 
 ######### PROCEDIMIENTO PARA UN ASD con RETROCESO ############
@@ -95,14 +29,22 @@ def procesar(cuerpo_produccion):
                 pni(simbolo)
                 if datos_locales['error']:
                     break
+                
+  def pni(no_terminal):
+        for cuerpo_produccion in P[no_terminal]:
+            backtracking_index = datos_locales['index']
+            procesar(cuerpo_produccion)
+            if datos_locales['error']:
+                datos_locales['index'] = backtracking_index
+            else:
+                break
 
 
 def principal():
-        pni('S')
+        pni('Program')
         caracter_actual = datos_locales['lista_tokens'][datos_locales['index']][0]
-        if caracter_actual != 'Eof' or datos_locales['error']:
+        if caracter_actual != '#' or datos_locales['error']:
             print('La cadena no pertenece al lenguaje')
             return False
         print('La cadena pertenece al lenguaje')
         return True
-    return principal()

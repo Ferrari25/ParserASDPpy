@@ -32,3 +32,29 @@ Operador ( |= ): El operador |= se utiliza en Python para realizar una operació
 len(): se utiliza para obtener la longitud (número de elementos) de una secuencia, como una lista, una cadena o una tupla.
 
 enumerate() : se utiliza para iterar a través de los símbolos de una producción y llevar un registro del índice de cada símbolo en la producción
+
+##################################################################################
+
+# Definir la estructura de datos
+ListaSentencias = [{"produccion" : ['Sentencia','ListaSentencias2'] , "SD" : ['SI','REPETIR','ID','LEER','MOSTRAR','FUNC']}]
+
+# Recorrer la lista de diccionarios
+for elemento in ListaSentencias:
+    produccion = elemento["produccion"]
+    SD = elemento["SD"]
+    
+    # Acceder a datos específicos
+    print("Producción:", produccion)
+    print("SD:", SD)
+    
+    # Acceder a elementos específicos dentro de las listas
+    primer_elemento_produccion = produccion[0]
+    segundo_elemento_produccion = produccion[1]
+    tercer_elemento_SD = SD[2]
+    
+    print("Primer elemento de producción:", primer_elemento_produccion)
+    print("Segundo elemento de producción:", segundo_elemento_produccion)
+    print("Tercer elemento de SD:", tercer_elemento_SD)
+
+
+################################################################################################################################
