@@ -3,7 +3,7 @@ P_GPSD = {
     'Program': [{"produccion": ['ListaSentencias'],"SD": ["a","b","c"],}], 
     
     'ListaSentencias' : [{"produccion" : ['Sentencia','ListaSentencias2'] , "SD" : ['SI','REPETIR','ID','LEER','MOSTRAR','FUNC']}],
-    'ListaSentencias2' : [{"produccion":['PUNTO-COMA','Sentencias','ListaSentencias2'], "SD" :[PUNTO-COMA]}],
+    'ListaSentencias2' : [{"produccion":['PUNTO-COMA','Sentencias','ListaSentencias2'], "SD" :['PUNTO-COMA']}],
     'ListaSentencias2' : [{"produccion":[], "SD" :['#', 'FIN-FUNC',  'FIN-SI' ,'SINO' ,'HASTA']}],
     
     'Sentencia' : [{"produccion":['SentenciaSi'], "SD" :['SI']}],
