@@ -14,7 +14,7 @@ P = {
     'Program': [{
           "produccion": ['ListaSentencias'],
           "SD": ["a","b","c"],
-          }],
+          }], 
 
      'Program' : [['ListaSentencias']],
 
